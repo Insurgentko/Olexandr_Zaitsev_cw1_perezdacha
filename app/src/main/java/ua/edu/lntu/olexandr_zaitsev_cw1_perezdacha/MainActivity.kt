@@ -1,5 +1,6 @@
 package ua.edu.lntu.olexandr_zaitsev_cw1_perezdacha
 
+import android.graphics.ColorFilter
 import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,11 +14,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -47,12 +50,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting( modifier: Modifier = Modifier) {
-    Column(modifier = modifier.fillMaxWidth()
+    Column(modifier = modifier
+        .fillMaxWidth()
         .height(150.dp),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
-            painter = painterResource(R.drawable.android_logo), contentDescription = "Android logo"
-        )
+            painter = painterResource(R.drawable.android_logo), contentDescription = "Android logo",
+            modifier = Modifier
+                .size(200.dp)
+                .padding(16.dp),
+            )
         Text(
             text = stringResource(R.string.full_name), fontSize = 24.sp
         )
@@ -64,13 +71,16 @@ fun Greeting( modifier: Modifier = Modifier) {
         .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom){
-    Row() {
+    Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+        Icon(painterResource(R.drawable.call_icon), contentDescription = "Call Icon")
         Text(text = stringResource(R.string.number), fontSize = 16.sp)
     }
-        Row() {
+        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+            Icon(painterResource(R.drawable.share_icon), contentDescription = "Call Icon")
             Text(text = stringResource(R.string.more), fontSize = 16.sp)
         }
-        Row() {
+        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+            Icon(painterResource(R.drawable.email_icon), contentDescription = "Call Icon")
             Text(text = stringResource(R.string.email), fontSize = 16.sp)
         }
 }
