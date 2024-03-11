@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Olexandr_Zaitsev_cw1_perezdacha</string>
+    <string name="full_name">Jennifer Doe</string>
+    <string name="title">Android Developer Extraodinares</string>
+    <string name="number">+9081249801240</string>
+    <string name="more">AndroidDev</string>
+    <string name="email">jen.doe@android.com</string>
 </resources>
